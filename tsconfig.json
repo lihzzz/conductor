@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./apps/desktop/main" },
+    { "path": "./apps/desktop/renderer" }
+  ]
+}
+

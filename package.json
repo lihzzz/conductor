@@ -1,0 +1,41 @@
+{
+  "name": "conductor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Electron MVP for Claude Code multi-agent orchestration",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "postinstall": "electron-rebuild -f -w node-pty,better-sqlite3",
+    "typecheck": "node ./node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "build:main": "node ./node_modules/typescript/bin/tsc -p apps/desktop/main/tsconfig.json",
+    "build:renderer": "node ./node_modules/vite/bin/vite.js build",
+    "build": "npm run build:main && npm run build:renderer",
+    "dev:renderer": "node ./node_modules/vite/bin/vite.js",
+    "dev:main": "node ./node_modules/typescript/bin/tsc -p apps/desktop/main/tsconfig.json --watch",
+    "dev": "concurrently \"npm run dev:renderer\" \"npm run dev:main\"",
+    "rebuild": "electron-rebuild -f -w node-pty,better-sqlite3",
+    "start": "node ./node_modules/electron/cli.js ."
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/addon-webgl": "^0.20.0-beta.194",
+    "@xterm/xterm": "^6.0.0",
+    "better-sqlite3": "^11.8.1",
+    "electron": "^36.9.5",
+    "node-pty": "^1.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.3",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22.15.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.4.1",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}
