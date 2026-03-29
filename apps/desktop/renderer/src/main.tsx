@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routes";
+import "./styles/theme.css";
 import "./styles.css";
 
 type ErrorBoundaryState = {
@@ -43,7 +45,7 @@ class ErrorBoundary extends React.Component<React.PropsWithChildren, ErrorBounda
 createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ErrorBoundary>
-      <App />
+      <RouterProvider router={router} />
     </ErrorBoundary>
   </React.StrictMode>
 );

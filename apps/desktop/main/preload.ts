@@ -2,6 +2,7 @@ import { contextBridge, ipcRenderer } from "electron";
 
 const IPC_CHANNELS = {
   CREATE_TEAM: "team:create",
+  GET_TEAMS: "team:list",
   START_AGENT: "agent:start",
   STOP_AGENT: "agent:stop",
   SEND_AGENT_INPUT: "agent:input",
@@ -15,6 +16,7 @@ const IPC_CHANNELS = {
 const api = {
   createTeam: (input: { name: string; workspaceRoot: string }) =>
     ipcRenderer.invoke(IPC_CHANNELS.CREATE_TEAM, input),
+  getTeams: () => ipcRenderer.invoke(IPC_CHANNELS.GET_TEAMS),
   startAgent: (input: { agentId: string; workspace: string }) =>
     ipcRenderer.invoke(IPC_CHANNELS.START_AGENT, input),
   stopAgent: (input: { agentId: string }) => ipcRenderer.invoke(IPC_CHANNELS.STOP_AGENT, input),

@@ -1,5 +1,6 @@
 export const IPC_CHANNELS = {
   CREATE_TEAM: "team:create",
+  GET_TEAMS: "team:list",
   START_AGENT: "agent:start",
   STOP_AGENT: "agent:stop",
   SEND_AGENT_INPUT: "agent:input",

@@ -1,0 +1,237 @@
+.team-sidebar {
+  width: 280px;
+  min-width: 280px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.app-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.btn-new-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  border: none;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-new-team:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.sidebar-search {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md) var(--space-sm) 32px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--border-focus);
+  background-color: var(--bg-secondary);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-sm) 0;
+}
+
+.team-section {
+  margin-bottom: var(--space-lg);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.section-icon {
+  opacity: 0.8;
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background-color var(--transition-fast);
+  border-left: 3px solid transparent;
+}
+
+.team-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.team-item.active {
+  background-color: var(--bg-active);
+  border-left-color: var(--accent-blue);
+}
+
+.team-item.archived {
+  opacity: 0.6;
+}
+
+.team-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.team-icon {
+  font-size: 18px;
+}
+
+.online-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  background-color: var(--accent-green);
+  color: var(--text-inverse);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-secondary);
+}
+
+.team-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.team-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.team-name {
+  font-weight: 500;
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.team-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.team-members {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.team-preview {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.team-status {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.empty-hint {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+}

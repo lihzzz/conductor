@@ -50,6 +50,10 @@ export class AppRepository implements MessageRepository {
     return this.database.db.prepare("SELECT * FROM teams ORDER BY created_at DESC").all() as TeamRow[];
   }
 
+  getTeam(teamId: string): TeamRow | undefined {
+    return this.database.db.prepare("SELECT * FROM teams WHERE id = ? LIMIT 1").get(teamId) as TeamRow | undefined;
+  }
+
   createAgent(teamId: string, name: string, role: AgentRow["role"]): AgentRow {
     const id = randomUUID();
     const createdAt = new Date().toISOString();

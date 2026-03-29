@@ -1,0 +1,81 @@
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.message-list.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-message {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: var(--space-2xl);
+}
+
+.welcome-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: var(--space-lg);
+}
+
+.welcome-message h3 {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.welcome-message p {
+  margin-bottom: var(--space-xl);
+}
+
+.quick-tips {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.tip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.tip-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+}
+
+.message-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.date-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-md) 0;
+}
+
+.date-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+}

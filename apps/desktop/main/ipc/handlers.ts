@@ -103,13 +103,28 @@ export function registerIpcHandlers(
     return message;
   });
 
+  ipcMain.handle(IPC_CHANNELS.GET_TEAMS, async () => {
+    const teams = context.repository.listTeams();
+    const teamsWithStats = teams.map(team => {
+      const agents = context.repository.listTeamAgents(team.id);
+      const onlineCount = agents.filter(a => a.status !== 'offline').length;
+      return {
+        ...team,
+        memberCount: agents.length,
+        onlineCount,
+      };
+    });
+    return { teams: teamsWithStats };
+  });
+
   ipcMain.handle(IPC_CHANNELS.GET_DASHBOARD_STATE, async (_event, input: unknown) => {
     const parsed = parseInput(dashboardStateRequestSchema, input);
+    const team = context.repository.getTeam(parsed.teamId);
     const agents = context.repository.listTeamAgents(parsed.teamId);
     const messages = context.repository.listMessages(parsed.teamId);
     const events = context.repository.listEvents(parsed.teamId);
     return {
-      teams: context.repository.listTeams(),
+      team,
       agents,
       messages,
       events,
